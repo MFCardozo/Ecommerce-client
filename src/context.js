@@ -217,13 +217,13 @@ const ProductProvider = ({ children }) => {
 
     try {
       const response = await phoneDataApi.post(
-        "https://immense-retreat-53510.herokuapp.com/api/check-cart/index.php",
+        "/api/check-cart/index.php",
         form
       );
       console.log(response);
 
       //in case fail the checkout
-      if (response.data.error || !response) {
+      if (!response || response.data.error || !response.data.url) {
         alert("Unexpected error happens,try later.");
         return;
       }
