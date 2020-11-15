@@ -209,6 +209,10 @@ const ProductProvider = ({ children }) => {
     }));
   };
 
+  /*
+   *IMPLEMENT OF ADAMS PAY APP
+   **/
+
   /*send cart to server to process pay*/
   const checkCart = async (cart, cartTotal) => {
     const form = new FormData();
