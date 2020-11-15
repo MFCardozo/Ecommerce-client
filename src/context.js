@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { v4 } from "uuid";
 import { phoneDataApi } from "./apis/PhoneDataApi";
 
 const ProductContext = React.createContext();
@@ -212,6 +213,7 @@ const ProductProvider = ({ children }) => {
   const checkCart = async (cart, cartTotal) => {
     const form = new FormData();
 
+    form.set("debtId", `debt${v4()}`);
     form.set("checkCart", JSON.stringify(cart));
     form.set("checkTotal", cartTotal);
 
