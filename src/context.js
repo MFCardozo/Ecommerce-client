@@ -229,6 +229,7 @@ const ProductProvider = ({ children }) => {
       }
 
       window.location.replace(response.data.url);
+      localStorage.removeItem("cart");
     } catch (error) {
       console.error(error);
     }
