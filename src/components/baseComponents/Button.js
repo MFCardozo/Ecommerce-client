@@ -17,12 +17,14 @@ export const ButtonModel = styled.button`
   transition: all 0.5s ease-in-out;
   text-transform: capitalize;
 
+  &:focus {
+    outline: none;
+  }
   &:hover {
     background: ${(prop) => (prop.back ? "" : "var(--lightGray)")};
     color: var(--mainBrown);
   }
-
-  &:focus {
-    outline: none;
+  &:active {
+    opacity: 0.2;
   }
 `;
